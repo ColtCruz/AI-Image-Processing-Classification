@@ -1,5 +1,7 @@
 ColtCruz-Image-Classification-and-Processing
+
 Part 1: Basic Classifier and Grad-CAM
+
 Classifier Code Explanation
 I asked the AI to explain each line of the base_classifier.py program. It walked through everything from importing TensorFlow and loading the image, to how the model processes the image and outputs top predictions. Since I don't have much Python experience, I was curious if the explanations would make sense. They actually did. The AI described things clearly enough that I could follow what was happening step by step. I understood how the image was preprocessed, passed through the model, and how predictions were decoded and printed. Overall, the explanation helped me gain confidence in working with unfamiliar code.
 
