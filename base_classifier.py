@@ -1,11 +1,10 @@
 import tensorflow as tf
 tf.get_logger().setLevel('ERROR')
-from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
-from tensorflow.keras.preprocessing import image
+from keras.applications import MobileNetV2
+from keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
+from keras.preprocessing import image
 import numpy as np
 import matplotlib.pyplot as plt
-
 
 model = MobileNetV2(weights="imagenet")
 
