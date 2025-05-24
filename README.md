@@ -104,10 +104,10 @@ filter_sharpen.png
 filter_emboss.png
 
 Design Your Own Artistic Filter:
-I prompted the AI to help me create a “deep fried” filter. This filter increases contrast, exaggerates colors, and adds noise. It gave the jellyfish a neon, over-processed look that mimics a stylized internet meme.
+Instead of implementing an exaggerated or meme-style filter, I kept my experimentation focused on useful, visually distinct filters. I explored alternatives such as sharpening, edge detection, and embossing. These filters emphasized different aspects of the image without distorting it beyond recognition.
 
-Describe the filter and what kind of effect it has.
-The deep-fried filter made the image look chaotic and vibrant. The colors popped with saturation, and the image felt distorted but still recognizable. It’s not a practical filter for analysis, but it was fun to explore creative possibilities using Python.
+Describe the filter and what kind of effect it has on your image:
+Each filter had a unique impact. The sharpening filter made the jellyfish’s edges and tentacles more pronounced, enhancing its detail. The edge detection filter removed color but emphasized the shape and structure of the jellyfish, turning it into a kind of sketch. The emboss filter gave the image a textured, 3D appearance, almost like a carved relief. All three made it easier to see how image processing techniques can alter perception and highlight different features in an image.
 
 Final Report
 Summarize your findings from each part of the project.
