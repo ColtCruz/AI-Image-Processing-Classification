@@ -5,12 +5,25 @@ def apply_blur_filter(image_path):
     try:
         img = Image.open(image_path)
         img_resized = img.resize((128, 128))
+        
+        # 1. Gaussian Blur
         img_blurred = img_resized.filter(ImageFilter.GaussianBlur(radius=2))
+        img_blurred.save("filter_blur.png")
 
-        plt.imshow(img_blurred)
-        plt.axis('off')
-        plt.savefig("blurred_image.png")
-        print("Processed image saved as 'blurred_image.png'.")
+        # 2. Edge Detection
+        img_edges = img_resized.filter(ImageFilter.FIND_EDGES)
+        img_edges.save("filter_edges.png")
+
+        # 3. Sharpen
+        img_sharpened = img_resized.filter(ImageFilter.SHARPEN)
+        img_sharpened.save("filter_sharpen.png")
+
+        # 4. Emboss
+        img_emboss = img_resized.filter(ImageFilter.EMBOSS)
+        img_emboss.save("filter_emboss.png")
+
+        print("Filters applied and images saved: blur, edges, sharpen, emboss.")
+
 
     except Exception as e:
         print(f"Error processing image: {e}")

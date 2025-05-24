@@ -52,7 +52,32 @@ def classify_image(image_path):
         output_path = "gradcam_output.jpg"
         cv2.imwrite(output_path, superimposed_img)
         print(f"\nGrad-CAM heatmap saved as {output_path}")
+
         # -------- Grad-CAM END --------
+
+    # -------- Occlusion Variants START --------
+        # Reuse the heatmap to target occlusion area
+        mask = heatmap > 150  # high-importance areas
+        mask = mask.astype(np.uint8) 
+
+        # 1. Black Box Occlusion
+        black_box = img.copy()
+        black_box[mask == 1] = 0
+        cv2.imwrite("occlusion_black_box.jpg", black_box)
+
+        # 2. Blur Occlusion
+        blur_occluded = img.copy()
+        blur = cv2.GaussianBlur(blur_occluded, (11, 11), 0)
+        blur_occluded[mask == 1] = blur[mask == 1]
+        cv2.imwrite("occlusion_blur.jpg", blur_occluded)
+
+        # 3. Noise Occlusion
+        noise_occluded = img.copy()
+        noise = np.random.randint(0, 256, img.shape, dtype=np.uint8)
+        noise_occluded[mask == 1] = noise[mask == 1] 
+        cv2.imwrite("occlusion_noise.jpg", noise_occluded)
+        print("Occluded images saved: black box, blur, noise.")
+        # -------- Occlusion Variants END --------
 
     except Exception as e:
         print(f"Error processing image: {e}")
